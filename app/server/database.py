@@ -16,9 +16,9 @@ guest_collection = database.get_collection("guests_collection")
 def guest_helper(guest) -> dict:
     return {
         "id": str(guest["_id"]),
-        "name": guest["Mads Madsen"],
-        "number_of_guests": guest["2"],
-        "hotel_room": guest["ja"]
+        "name": guest["name"],
+        "number_of_guests": guest["number_of_guests"],
+        "hotel_room": guest["hotel_room"]
     }
 
 
