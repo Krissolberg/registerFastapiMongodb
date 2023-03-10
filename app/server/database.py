@@ -33,7 +33,10 @@ async def retrieve_guests():
 # Add a new guest into to the database
 async def add_guest(guest_data: dict) -> dict:
     guest = await guest_collection.insert_one(guest_data)
+    print(guest)
     new_guest = await guest_collection.find_one({"_id": guest.inserted_id})
+    print("Saving data to database")
+    print(new_guest)
     return guest_helper(new_guest)
 
 
