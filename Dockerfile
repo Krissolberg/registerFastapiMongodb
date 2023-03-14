@@ -12,10 +12,11 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Copy the application code into the container
-COPY ["loan_catboost_model.cbm", "app.py", "./"] .
+# COPY ["loan_catboost_model.cbm", "app.py", "./"] .
+COPY ./app /app
 
-# Expose the app port
-EXPOSE 80
+# # Expose the app port
+# EXPOSE 80
 
 # Run command
-CMD ["uvicorn", "server.app:app", "--host", "127.0.0.1", "--port", "8080"]
+CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "80"]
