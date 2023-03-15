@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import sys
 sys.path.append("..")
-from server.routes.guest import router as GuestRouter
+from app.server.routes.guest import router as GuestRouter
 
 app = FastAPI()
 
